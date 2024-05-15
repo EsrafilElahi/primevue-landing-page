@@ -112,32 +112,31 @@ import "./style.css";
 
 const app = createApp(App);
 
-// app.use(router);
-// app.use(PrimeVue, {
-//   ripple: true,
-//   // unstyled: true,
-//   // inputStyle: "filled",
-//   zIndex: {
-//     modal: 1100, //dialog, sidebar
-//     overlay: 1000, //dropdown, overlaypanel
-//     menu: 1000, //overlay menus
-//     tooltip: 1100, //tooltip
-//   },
-//   pt: Lara,
-//   // pt: {
-//   //   inputtext: {
-//   //     root: "bg-purple-50 text-surface-900 ...",
-//   //   },
-//   //   button: {
-//   //     root: "bg-teal-500 hover:bg-teal-700 cursor-pointer text-white p-3 border-round border-none flex gap-2",
-//   //     label: "text-white font-bold text-md", // OR { class: 'text-white font-bold text-xl' }
-//   //     icon: "text-white text-2xl",
-//   //     severity: "!text-[#d0c] text-black",
-//   //   },
-//   // },
-// });
+app.use(PrimeVue, {
+  ripple: true,
+  // unstyled: true,
+  // inputStyle: "filled",
+  zIndex: {
+    modal: 1100, //dialog, sidebar
+    overlay: 1000, //dropdown, overlaypanel
+    menu: 1000, //overlay menus
+    tooltip: 1100, //tooltip
+  },
+  pt: Lara,
+  // pt: {
+  //   inputtext: {
+  //     root: "bg-purple-50 text-surface-900 ...",
+  //   },
+  //   button: {
+  //     root: "bg-teal-500 hover:bg-teal-700 cursor-pointer text-white p-3 border-round border-none flex gap-2",
+  //     label: "text-white font-bold text-md", // OR { class: 'text-white font-bold text-xl' }
+  //     icon: "text-white text-2xl",
+  //     severity: "!text-[#d0c] text-black",
+  //   },
+  // },
+});
 
-app.use(PrimeVue, { ripple: true, unstyled: true, pt: Lara });
+// app.use(PrimeVue, { ripple: true, unstyled: true, pt: Lara });
 app.use(ConfirmationService);
 app.use(ToastService);
 app.use(DialogService);
