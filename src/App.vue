@@ -1,14 +1,9 @@
 <template>
   <div>
-    <h1 class="text-[#d0c]">salam</h1>
+
     <InputText placeholder="test" />
 
-    <InputText class="p-4" />
-
-    <InputText :pt="myInputStyle" :ptOptions="{ mergeSections: true, mergeProps: false }" />
-
-
-    <Button>tes</Button>
+    <!-- <InputText :pt="myInputStyle" :ptOptions="{ mergeSections: true, mergeProps: false }" /> -->
 
     <span class="pi pi-user pi-spin pi-cog" style="color: #708090"></span>
   </div>
@@ -18,7 +13,6 @@
     <Button label="Button 2" severity="secondary" outlined></Button>
     <Button label="Help" severity="help" outlined></Button>
     <Button label="Success" severity="success" rounded raised outlined></Button>
-
   </div>
 </template>
 
