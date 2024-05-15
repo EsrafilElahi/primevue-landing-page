@@ -2,9 +2,6 @@
   <div>
 
     <InputText placeholder="test" />
-
-    <!-- <InputText :pt="myInputStyle" :ptOptions="{ mergeSections: true, mergeProps: false }" /> -->
-
     <span class="pi pi-user pi-spin pi-cog" style="color: #708090"></span>
   </div>
 
