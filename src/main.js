@@ -7,7 +7,7 @@ import InputText from "primevue/inputtext";
 import Dialog from "primevue/dialog";
 
 import Lara from "./presets/lara";
-// import "primevue/resources/themes/saga-blue/theme.css";
+import "primevue/resources/themes/saga-blue/theme.css";
 import "primevue/resources/primevue.min.css";
 import "primeicons/primeicons.css";
 import "./style.css";
