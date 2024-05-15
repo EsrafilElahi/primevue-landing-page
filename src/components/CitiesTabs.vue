@@ -1,16 +1,10 @@
 <template>
   <div class="flex justify-center gap-3 pt-7">
-
     <div v-for="city in cities" :key="city.id">
       <Button @click="handleChangeCity(city.name)"
         :class="{ 'text-purple-500 border-purple-300': city.name === activeCity }" class="px-3 py-2 border rounded-lg">
         {{ city.name }}
       </Button>
-
-      <!-- <Button @click="handleChangeCity('Los Angeles')"
-      :class="{ 'text-purple-500 border-purple-300': activeCity === 'Los Angeles' }" class="px-3 py-2 border rounded-lg">
-      Los Angeles
-    </Button> -->
     </div>
   </div>
 </template>
