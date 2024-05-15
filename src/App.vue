@@ -1,6 +1,24 @@
 <template>
   <div>
     <h1 class="text-[#d0c]">salam</h1>
+    <InputText placeholder="test" />
+
+    <InputText class="p-4" />
+
+    <InputText :pt="myInputStyle" :ptOptions="{ mergeSections: true, mergeProps: false }" />
+
+
+    <Button>tes</Button>
+
+    <span class="pi pi-user pi-spin pi-cog" style="color: #708090"></span>
+  </div>
+
+  <div class="flex flex-column md:flex-row md:justify-content-between row-gap-3">
+    <Button label="Button 1" icon="pi pi-user" severity="success"></Button>
+    <Button label="Button 2" severity="secondary" outlined></Button>
+    <Button label="Help" severity="help" outlined></Button>
+    <Button label="Success" severity="success" rounded raised outlined></Button>
+
   </div>
 </template>
 
