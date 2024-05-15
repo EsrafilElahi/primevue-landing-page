@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2">
+  <div class="px-2 py-10">
     <NavBar />
 
     <RouterView></RouterView>
