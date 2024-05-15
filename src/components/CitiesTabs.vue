@@ -1,14 +1,17 @@
 <template>
-  <div class="flex justify-center gap-3">
-    <Button @click="handleChangeCity('New York')"
-      :class="{ 'text-purple-500 border-purple-300': activeCity === 'New York' }" class="px-3 py-2 border rounded-lg">
-      New York
-    </Button>
+  <div class="flex justify-center gap-3 pt-7">
 
-    <Button @click="handleChangeCity('Los Angeles')"
+    <div v-for="city in cities" :key="city.id">
+      <Button @click="handleChangeCity(city.name)"
+        :class="{ 'text-purple-500 border-purple-300': city.name === activeCity }" class="px-3 py-2 border rounded-lg">
+        {{ city.name }}
+      </Button>
+
+      <!-- <Button @click="handleChangeCity('Los Angeles')"
       :class="{ 'text-purple-500 border-purple-300': activeCity === 'Los Angeles' }" class="px-3 py-2 border rounded-lg">
       Los Angeles
-    </Button>
+    </Button> -->
+    </div>
   </div>
 </template>
 
@@ -16,8 +19,36 @@
 import { ref } from 'vue';
 
 const activeCity = ref('New York');
-
-console.log('activeCity :', activeCity.value)
+const cities = ref([
+  {
+    id: 'New York',
+    name: 'New York'
+  },
+  {
+    id: 'Los Angeles',
+    name: 'Los Angeles'
+  },
+  {
+    id: 'London',
+    name: 'London'
+  },
+  {
+    id: 'Rome',
+    name: 'Rome'
+  },
+  {
+    id: 'Paris',
+    name: 'Paris'
+  },
+  {
+    id: 'Istanbul',
+    name: 'Istanbul'
+  },
+  {
+    id: 'Madrid',
+    name: 'Madrid'
+  },
+])
 
 const handleChangeCity = (newCity) => {
   return activeCity.value = newCity
