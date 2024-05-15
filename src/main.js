@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import PrimeVue from "primevue/config";
+import { router } from "./routes";
 
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
@@ -14,6 +15,7 @@ import "./style.css";
 
 const app = createApp(App);
 
+app.use(router);
 app.use(PrimeVue, {
   ripple: true,
   // unstyled: true,

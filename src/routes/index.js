@@ -9,17 +9,17 @@ const routes = [
   {
     path: "/search-buy-house",
     name: "SearchBuyHouse",
-    component: () => import("../views/BasketView.vue"),
+    component: () => import("../views/SearchBuyHouseView.vue"),
   },
   {
     path: "/search-rent-house",
     name: "SearchRentHouse",
-    component: () => import("../views/BasketView.vue"),
+    component: () => import("../views/SearchRentHouseView.vue"),
   },
   {
     path: "/search-sold-house",
     name: "SearchSoldHouse",
-    component: () => import("../views/BasketView.vue"),
+    component: () => import("../views/SearchSoldHouseView.vue"),
   },
 ];
 
