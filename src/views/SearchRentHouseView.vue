@@ -1,13 +1,11 @@
 <template>
   <div>
-    product details
+    search rent house
   </div>
 </template>
 
-<script>
-export default {
+<script setup>
 
-}
 </script>
 
 <style scoped></style>
