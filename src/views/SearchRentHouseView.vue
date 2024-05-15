@@ -1,6 +1,6 @@
 <template>
   <div>
-    search rent house
+    search rent house pageeeeeeeeeeee
   </div>
 </template>
 
