@@ -7,14 +7,19 @@ const routes = [
     component: () => import("../views/HomeView.vue"),
   },
   {
-    path: "/basket",
-    name: "Basket",
+    path: "/search-buy-house",
+    name: "SearchBuyHouse",
     component: () => import("../views/BasketView.vue"),
   },
   {
-    path: "/product-details",
-    name: "ProductDetails",
-    component: () => import("../views/ProductDetails.vue"),
+    path: "/search-rent-house",
+    name: "SearchRentHouse",
+    component: () => import("../views/BasketView.vue"),
+  },
+  {
+    path: "/search-sold-house",
+    name: "SearchSoldHouse",
+    component: () => import("../views/BasketView.vue"),
   },
 ];
 
