@@ -37,8 +37,8 @@ const cities = ref([
     name: 'Paris'
   },
   {
-    id: 'Istanbul',
-    name: 'Istanbul'
+    id: 'Tehran',
+    name: 'Tehran'
   },
   {
     id: 'Madrid',
