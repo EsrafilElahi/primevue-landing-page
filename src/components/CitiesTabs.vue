@@ -11,6 +11,8 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
 const activeCity = ref('New York');
 const cities = ref([
@@ -45,7 +47,8 @@ const cities = ref([
 ])
 
 const handleChangeCity = (newCity) => {
-  return activeCity.value = newCity
+  router.push({ name: 'Home', query: { userName: newCity } })
+  activeCity.value = newCity
 }
 
 </script>
