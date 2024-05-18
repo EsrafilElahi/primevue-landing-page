@@ -8,14 +8,14 @@
 </template>
 
 <script setup>
-import axios from 'axios';
+import { axiosInstance } from '../utils';
 import CitiesTabs from '../components/CitiesTabs.vue';
 import { useRoute } from 'vue-router'
 import { onMounted } from 'vue';
 const route = useRoute()
 
 onMounted(() => {
-  axios.get('https://realtor-search.p.rapidapi.com/properties/search-buy')
+  axiosInstance.get('https://realtor-search.p.rapidapi.com/properties/search-buy')
 })
 
 </script>
