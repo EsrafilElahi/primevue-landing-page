@@ -11,18 +11,29 @@
 import { axiosInstance } from '../utils';
 import CitiesTabs from '../components/CitiesTabs.vue';
 import { useRoute } from 'vue-router'
-import { onMounted, watch, watchEffect } from 'vue';
+import { onMounted, reactive, watch } from 'vue';
 const route = useRoute()
+
+const cityData = reactive({
+  loading: false,
+  error: false,
+  data: []
+})
+
 
 const fetchData = async (userName) => {
   try {
+    cityData.loading = true
     const res = await axiosInstance.get('https://realtor-search.p.rapidapi.com/properties/search-buy', {
       params: {
         location: `city:${userName || 'New York'}`
       }
     });
-    console.log('res :', res);
+    cityData.loading = false
+    cityData.error = false
+    cityData.data = res.data.data.results
   } catch (error) {
+    cityData.error = error
     console.error('Error fetching data:', error);
   }
 };
