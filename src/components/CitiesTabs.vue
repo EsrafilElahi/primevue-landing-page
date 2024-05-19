@@ -47,7 +47,7 @@ const cities = ref([
 ])
 
 const handleChangeCity = (newCity) => {
-  router.push({ name: 'Home', query: { userName: newCity } })
+  router.push({ name: 'Home', query: { cityName: newCity } })
   activeCity.value = newCity
 }
 
