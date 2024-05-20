@@ -4,10 +4,10 @@
 
     <div>
       <div v-if="!cityData.error">
-        <div v-if="cityData.loading">loading...</div>
+        <div v-if="cityData.loading" class="text-center mt-10">loading...</div>
         <div v-else>{{ route.query.cityName || 'New York' }}</div>
       </div>
-      <div v-else class="text-red-500"> error data fetch {{ cityData.error.message }}</div>
+      <div v-else class="text-red-500 text-center mt-10"> error data fetch {{ cityData.error.message }}</div>
     </div>
   </div>
 </template>
