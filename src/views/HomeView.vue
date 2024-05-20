@@ -2,6 +2,8 @@
   <div>
     <CitiesTabs />
 
+    <CityHouseItem />
+
     <div>
       <div v-if="!cityData.error">
         <div v-if="cityData.loading" class="text-center mt-10">loading...</div>
@@ -16,6 +18,7 @@
 import { axiosInstance } from '../utils';
 import CitiesTabs from '../components/CitiesTabs.vue';
 import { useRoute } from 'vue-router';
+import CityHouseItem from '../components/CityHouseItem.vue';
 import { onMounted, reactive, watch } from 'vue';
 const route = useRoute();
 
