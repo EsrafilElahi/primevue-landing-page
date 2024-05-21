@@ -2,7 +2,6 @@
   <div>
     <CitiesTabs />
 
-
     <div>
       <div v-if="!cityData.error">
         <div v-if="cityData.loading" class="text-center mt-10">loading...</div>
