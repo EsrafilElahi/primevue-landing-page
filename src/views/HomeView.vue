@@ -2,12 +2,13 @@
   <div>
     <CitiesTabs />
 
-    <CityHouseItem />
 
     <div>
       <div v-if="!cityData.error">
         <div v-if="cityData.loading" class="text-center mt-10">loading...</div>
-        <div v-else class="text-center mt-10">{{ route.query.cityName || 'New York' }}</div>
+        <div v-else class="text-center mt-10" v-for="city in cityData.data" :key="city.id">
+          <CityHouseItem item={{ city }} />
+        </div>
       </div>
       <div v-else class="text-red-500 text-center mt-10"> error data fetch : {{ cityData.error.message }}</div>
     </div>
