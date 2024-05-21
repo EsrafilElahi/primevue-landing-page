@@ -1,7 +1,7 @@
 <template>
   <div>
     search buy house pageeeeeeeeeeee
-    <InputSearch :value="value" />
+    <InputSearch v-model="value" />
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import { ref, watch } from 'vue';
 import InputSearch from '../components/InputSearch.vue';
 const value = ref('')
 
-// console.log('value :', value.value)
+console.log('value :', value.value)
 
 watch(() => value, (newVal) => {
   console.log('value watch :', newVal)
