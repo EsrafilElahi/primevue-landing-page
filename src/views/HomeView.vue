@@ -26,19 +26,29 @@ const cityData = reactive({
   loading: false,
   error: null,
   data: []
+});
+
+const pagination = reactive({
+  limit: 20,
+  offset: 0,
+  next: null,
+  previous: null,
 })
 
-const fetchData = async (cityName) => {
+const fetchData = async () => {
   try {
     cityData.loading = true
-    const res = await axiosInstance.get('https://realtor-search.p.rapidapi.com/properties/search-buy', {
-      params: {
-        location: `city:${cityName || 'New York'}`
-      }
+    const res = await axiosInstance.get(`/ability/?limit=${pagination.limit}&offset=${pagination.offset}`, {
+      // params: {
+      //   location: `city:${cityName || 'New York'}`
+      // }
     });
     cityData.loading = false
     cityData.error = null
-    cityData.data = res.data.data.results
+    cityData.data = res.data.results
+    pagination.next = res.data.next
+    pagination.previous = res.data.previous
+
   } catch (error) {
     console.log('error fetching data:', error);
     cityData.error = error
@@ -46,12 +56,12 @@ const fetchData = async (cityName) => {
 };
 
 onMounted(() => {
-  fetchData(route.query.cityName);
+  fetchData();
 });
 
-watch(() => route.query.cityName, (newCityName) => {
-  fetchData(newCityName);
-});
+// watch(() => route.query.cityName, (newCityName) => {
+//   fetchData(newCityName);
+// });
 
 </script>
 
