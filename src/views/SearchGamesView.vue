@@ -1,6 +1,6 @@
 <template>
   <div>
-    search buy house pageeeeeeeeeeee
+    search games pageeeeeeeeeeee
     <span>{{ value }}</span>
     <InputSearch v-model:inputValue="value" />
 

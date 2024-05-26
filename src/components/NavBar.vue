@@ -3,11 +3,11 @@
     <router-link active-class="text-purple-500 border-purple-300" class="px-3 py-2 border rounded-lg"
       :to="{ name: 'Home' }">Home</router-link>
     <router-link active-class="text-purple-500 border-purple-300" class="px-3 py-2 border rounded-lg"
-      to="/search-buy-house">Search Buy House</router-link>
+      to="/search-games">Search Games</router-link>
     <router-link active-class="text-purple-500 border-purple-300" class="px-3 py-2 border rounded-lg"
-      to="/search-rent-house">Search Rent House</router-link>
+      to="/search-location">Search Location</router-link>
     <router-link active-class="text-purple-500 border-purple-300" class="px-3 py-2 border rounded-lg"
-      to="/search-sold-house">Search Sold House</router-link>
+      to="/search-pokemon">Search Pokemon</router-link>
   </div>
 </template>
 

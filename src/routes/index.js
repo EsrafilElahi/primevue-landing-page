@@ -7,19 +7,19 @@ const routes = [
     component: () => import("../views/HomeView.vue"),
   },
   {
-    path: "/search-buy-house",
-    name: "SearchBuyHouse",
-    component: () => import("../views/SearchBuyHouseView.vue"),
+    path: "/search-games",
+    name: "SearchGames",
+    component: () => import("../views/SearchGamesView.vue"),
   },
   {
-    path: "/search-rent-house",
-    name: "SearchRentHouse",
-    component: () => import("../views/SearchRentHouseView.vue"),
+    path: "/search-location",
+    name: "SearchLocation",
+    component: () => import("../views/SearchLocationView.vue"),
   },
   {
-    path: "/search-sold-house",
-    name: "SearchSoldHouse",
-    component: () => import("../views/SearchSoldHouseView.vue"),
+    path: "/search-pokemon",
+    name: "SearchPokemon",
+    component: () => import("../views/SearchPokemonView.vue"),
   },
 ];
 

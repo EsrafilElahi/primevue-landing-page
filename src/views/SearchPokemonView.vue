@@ -1,6 +1,6 @@
 <template>
   <div>
-    search rent house pageeeeeeeeeeee
+    search pokemon pageeeeeeeeeeee
   </div>
 </template>
 

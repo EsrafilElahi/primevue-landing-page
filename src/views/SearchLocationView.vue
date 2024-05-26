@@ -1,6 +1,6 @@
 <template>
   <div>
-    search sold house pageeeeeeeeeeee
+    search location pageeeeeeeeeeee
   </div>
 </template>
 

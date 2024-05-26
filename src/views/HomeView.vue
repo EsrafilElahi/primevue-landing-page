@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CitiesTabs />
+    <!-- <CitiesTabs /> -->
 
     <div>
       <div v-if="!cityData.error">
@@ -16,7 +16,7 @@
 
 <script setup>
 import { axiosInstance } from '../utils';
-import CitiesTabs from '../components/CitiesTabs.vue';
+// import CitiesTabs from '../components/CitiesTabs.vue';
 import { useRoute } from 'vue-router';
 import CityHouseItem from '../components/CityHouseItem.vue';
 import { onMounted, reactive, watch } from 'vue';
@@ -34,6 +34,8 @@ const pagination = reactive({
   next: null,
   previous: null,
 })
+
+console.log('cityData :', cityData)
 
 const fetchData = async () => {
   try {
