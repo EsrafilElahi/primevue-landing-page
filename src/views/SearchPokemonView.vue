@@ -4,13 +4,13 @@
       Search Pokemon With Name
     </span>
 
-    <InputSearch v-model:inputValue="value" placeholder="like: hoenn or id: 4" />
+    <InputSearch v-model:inputValue="value" placeholder="like: speed-boost or id: 3" />
 
     <div v-if="!pokemonPokemonData?.error" class="mt-10">
       <div v-if="pokemonPokemonData?.loading">loading...</div>
       <div v-else>
-        <div v-if="pokemonPokemonData?.data?.region">
-          <PokemonItem :item="pokemonPokemonData?.data?.region" />
+        <div v-if="pokemonPokemonData?.data?.id">
+          <PokemonItem :item="{ url: pokemonPokemonData?.data?.generation?.url, name: pokemonPokemonData?.data?.name }" />
         </div>
       </div>
     </div>
@@ -72,7 +72,9 @@ watch(() => pokemonPokemonData.data, () => {
 watchEffect(async () => {
   // this effect will run immediately and then
   // re-run whenever currentBranch.value changes
-  fetchData(debouncedValue.value);
+  if(debouncedValue.value) {
+    fetchData(debouncedValue.value);
+  }
 })
 
 </script>

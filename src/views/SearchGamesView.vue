@@ -72,7 +72,9 @@ watch(() => pokemonGamesData.data, () => {
 watchEffect(async () => {
   // this effect will run immediately and then
   // re-run whenever currentBranch.value changes
-  fetchData(debouncedValue.value);
+  if (debouncedValue.value) {
+    fetchData(debouncedValue.value);
+  }
 })
 
 </script>
