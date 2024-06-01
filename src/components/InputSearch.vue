@@ -1,16 +1,15 @@
 <template>
   <div>
-    <InputText aria-placeholder="test" v-model="model" />
-
+    <InputText placeholder="like: kanto ir id: 2" v-model="model" />
   </div>
 </template>
 
 <script setup>
 import { watch } from "vue";
-const model = defineModel('inputValue')
+const model = defineModel('inputValue');
 
-watch(() => model, (newVal) => {
-  console.log('value watch 2 :', model)
+watch(() => model.value, (newVal) => {
+  // console.log('value watch 2 :', model)
 });
 
 </script>

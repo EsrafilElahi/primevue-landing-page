@@ -8,3 +8,19 @@ export const axiosInstance = axios.create({
 // const RAPID_API_HOST = "realtor-search.p.rapidapi.com";
 // axiosInstance.defaults.headers.common["X-Rapidapi-Key"] = RAPID_API_KEY;
 // axiosInstance.defaults.headers.common["X-Rapidapi-Host"] = RAPID_API_HOST;
+
+import { ref, watch } from "vue";
+
+export function useDebounce(value, delay = 300) {
+  const debouncedValue = ref(value.value);
+
+  let timeout;
+  watch(value, (newValue) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      debouncedValue.value = newValue;
+    }, delay);
+  });
+
+  return debouncedValue;
+}
