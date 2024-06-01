@@ -4,7 +4,7 @@
       Search Games With Name
     </span>
 
-    <InputSearch v-model:inputValue="value" />
+    <InputSearch v-model:inputValue="value" placeholder="like: kanto or id: 2" />
 
     <div v-if="!pokemonGamesData?.error" class="mt-10">
       <div v-if="pokemonGamesData?.loading">loading...</div>
@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import { reactive, ref, watch } from 'vue';
+import { reactive, ref, watch, watchEffect } from 'vue';
 import InputSearch from '../components/InputSearch.vue';
 import PokemonItem from '../components/PokemonItem.vue';
 import { axiosInstance, useDebounce } from '../utils';
@@ -38,17 +38,13 @@ const pokemonGamesData = reactive({
   data: {}
 });
 
-console.log('pokemonGamesData :', pokemonGamesData)
-
-const fetchData = async (pokeName) => {
+const fetchData = async (pokeGame) => {
   try {
     pokemonGamesData.loading = true;
-    const res = await axiosInstance.get(`https://pokeapi.co/api/v2/pokedex/${pokeName}`);
+    const res = await axiosInstance.get(`https://pokeapi.co/api/v2/pokedex/${pokeGame}`);
 
     pokemonGamesData.loading = false;
     pokemonGamesData.error = null;
-
-    console.log(res)
 
     pokemonGamesData.data = res.data;
   } catch (error) {
@@ -62,15 +58,22 @@ const fetchData = async (pokeName) => {
 // });
 
 watch(() => pokemonGamesData.data, () => {
-  console.log('pokemonGamesData watch :', pokemonGamesData)
+  // console.log('pokemonGamesData watch :', pokemonGamesData)
 })
 
-watch(debouncedValue, (newVal) => {
-  // console.log('debounced value watchhhhhh :', newVal);
-  if (newVal) {
-    fetchData(newVal);
-  }
-});
+// both of wathes is ok
+// watch(debouncedValue, (newVal) => {
+//   // console.log('debounced value watchhhhhh :', newVal);
+//   if (newVal) {
+//     fetchData(newVal);
+//   }
+// });
+
+watchEffect(async () => {
+  // this effect will run immediately and then
+  // re-run whenever currentBranch.value changes
+  fetchData(debouncedValue.value);
+})
 
 </script>
 

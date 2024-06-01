@@ -1,12 +1,13 @@
 <template>
   <div>
-    <InputText placeholder="like: kanto ir id: 2" v-model="model" />
+    <InputText :placeholder="placeholder" v-model="model" />
   </div>
 </template>
 
 <script setup>
 import { watch } from "vue";
 const model = defineModel('inputValue');
+const { placeholder } = defineProps(['placeholder'])
 
 watch(() => model.value, (newVal) => {
   // console.log('value watch 2 :', model)
